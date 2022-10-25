@@ -15,10 +15,7 @@
 
 html{
     font-family: 'Poppins',sans-serif;
-    /* overflow-y: scroll; */
-}
-body{
-    background:url(./img/background.jpg) no-repeat;
+    overflow-y: scroll;
 }
 
 .align{
@@ -35,7 +32,6 @@ body{
 .container{
     margin:10vh auto;
     width:490px;
-    height: 80vh;
     background-color: rgba(256, 256, 256, 0.1);
     box-shadow: 1px 1px 5px rgba(0, 0, 0,0.6);
     /* this is to make background blur */
@@ -105,9 +101,6 @@ body{
 }
 .cd_thumbnail{
     margin: 0 auto;
-    background: url(./img/justin\ bieber.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -164,7 +157,5 @@ body{
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: url(./img/justin\ bieber.jpg) no-repeat;
-    background-size: cover;
     background-position: center;
 }
