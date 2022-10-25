@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music mobile practice</title>
+
+    <!-- embed-css -->
+    <link rel="stylesheet" href="./music_mobile.css">
+    
+    <!-- favicon-icon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="align">
+    <div class="container">
+        <div class="header_wrapper">
+            <div class="song_header align">
+                <div class="align_item header-close"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="align_item song_play">
+                    <h4>Now playing:</h4>
+                    <h2 class="song_play_name">Sting 57th & 9th</h2>
+                </div>
+                <div class="align_item header_add"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="cd">
+                <div class="cd_thumbnail"></div>
+            </div>
+            <div class="option align">
+                <div class="align_item playback"><i class="fa-solid fa-rotate-right"></i></div>
+                <div class="align_item prev_song"><i class="fa-solid fa-backward-step"></i></div>
+                <div class="align_item play_song">
+                    <i class="fa-solid fa-play play"></i>
+                    <i class="fa-solid fa-pause pause"></i>
+                </div>
+                <div class="align_item next_song"><i class="fa-solid fa-forward-step"></i></div>
+                <div class="align_item random_song"><i class="fa-solid fa-shuffle"></i></div>
+            </div>
+            <input type="range" class="progress" id="" min="0" max="100" step="1" value="0">
+        </div>
+        <audio src=""></audio>
+
+        <!-- playlist -->
+        <div class="playlist">
+            <div class="song align">
+                <div class="song_img"></div>
+                <div class="song_title">
+                    <div class="song_name">Music</div>
+                    <div class="author">Singer</div>
+                </div>
+                <div class="song_more"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./music_mobile.js"></script>
+</body>
+</html>

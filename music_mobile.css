@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+:root{
+    --primary-color: #ec1f55;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --title-color:rgb(245, 61, 101);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins',sans-serif;
+    /* overflow-y: scroll; */
+}
+body{
+    background:url(./img/background.jpg) no-repeat;
+}
+
+.align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.align_item{
+    flex:1;
+    cursor: pointer;
+}
+
+.container{
+    margin:10vh auto;
+    width:490px;
+    height: 80vh;
+    background-color: rgba(256, 256, 256, 0.1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0,0.6);
+    /* this is to make background blur */
+    backdrop-filter: blur(5px); 
+    border-radius: 15px;
+    z-index: 10;
+}
+.active{
+    color:red;
+    opacity: 0.8;
+}
+
+/* header */
+.song_header{
+    color:var(--title-color);
+    margin-top: 30px;
+}
+.song_header .song_play{
+    flex:3;
+    text-align: center;
+}
+.song_header .song_play h4{
+    font-size: 12px;
+}
+.song_header .song_play h2{
+    font-weight: 500;
+    font-size: 23px;
+    color: var(--text-color);
+}
+.header-close{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 25px;
+}
+.header_add{
+    text-align: right;
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+/* thumbnail */
+.cd{
+    position: relative;
+    margin-top: 20px;
+}
+.cd::before{
+    content: '';
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: rgba(81, 28, 102, 0.8);
+}
+.cd::after{
+    content: '';
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width: 17px;
+    height: 17px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: rgba(36, 36, 36,.8);
+}
+.cd_thumbnail{
+    margin: 0 auto;
+    background: url(./img/justin\ bieber.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    outline: solid 1px var(--text-color);
+}
+
+/* option */
+.option {
+    margin: 35px 0 15px;
+    font-size: 25px;
+    color:rgba(64, 41, 83, 0.9);
+}
+.play_song i{
+    padding: 10px 20px;
+    background-color: red;
+    color: rgba(256, 256, 256, 0.9);
+    box-shadow: 0 2px 3px rgba(72, 32, 90, 0.7);
+    border-radius: 100%;
+}
+.play_song .pause{
+    display: none;
+}
+
+/* progress */
+.progress {
+    width: 80%;
+    height: 6px;
+    border-radius: 10px;
+    appearance: none;
+    margin-bottom: 25px;
+}
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+.song{
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 90%;
+    background-color: rgba(256, 256, 256, 0.3);
+    padding: 10px 35px 10px 25px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.song_title{
+    text-align: left;
+}
+.song_img{
+    margin:0 8px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: url(./img/justin\ bieber.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
