@@ -15,7 +15,8 @@
     <!-- fontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="align">
+<body class="align" style="background: url(./img/background.jpg) center no-repeat;
+background-size: cover">
     <div class="container">
         <div class="header_wrapper">
             <div class="song_header align">
@@ -27,27 +28,28 @@
                 <div class="align_item header_add"><i class="fa-solid fa-plus"></i></div>
             </div>
             <div class="cd">
-                <div class="cd_thumbnail" style="background: url(./img/justin_bieber.jpg) center no-repeat;
-                background-size: cover"></div>
+                <div class="cd_thumbnail"></div>
             </div>
             <div class="option align">
                 <div class="align_item playback"><i class="fa-solid fa-rotate-right"></i></div>
                 <div class="align_item prev_song"><i class="fa-solid fa-backward-step"></i></div>
                 <div class="align_item play_song">
-                    <i class="fa-solid fa-play play"></i>
-                    <i class="fa-solid fa-pause pause"></i>
+                    <i class="fa-solid fa-play play-icon"></i>
+                    <i class="fa-solid fa-pause pause-icon"></i>
                 </div>
                 <div class="align_item next_song"><i class="fa-solid fa-forward-step"></i></div>
                 <div class="align_item random_song"><i class="fa-solid fa-shuffle"></i></div>
             </div>
-            <input type="range" class="progress" id="" min="0" max="100" step="1" value="0">
+            <input type="range" class="progress" min="0" max="100" step="1" value="0">
+            <div class="song_time">
+                <span class="current_time">00:00</span>
+                <span class="duration_time">00:00</span>
+            </div>
+            <audio id="audio" src=""></audio>
         </div>
-        <audio src=""></audio>
 
         <!-- playlist -->
         <div class="playlist">
-            <div class="song align">
-            </div>
         </div>
     </div>
 
