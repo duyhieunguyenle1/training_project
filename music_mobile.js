@@ -16,6 +16,8 @@
 const $=document.querySelector.bind(document);
 const $$=document.querySelectorAll.bind(document);
 
+const PLAYER_STORAGE_KEY='PLAYER';
+
 const cd=$('.cd');
 const heading=$('.song_play h2');
 const cdThumb=$('.cd_thumbnail');
@@ -39,6 +41,7 @@ const app={
     isPlaying:false,
     isRepeat:false,
     isRandom:false,
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY))||{},
     songs: [ 
         {
             name:'Anh nhà ở đâu thế',
@@ -95,6 +98,10 @@ const app={
             image:'./img/rosé.jpg'
         },
     ],
+    setConfig:function(key,value){
+        this.config[key]=value;
+        localStorage.setItem(PLAYER_STORAGE_KEY,JSON.stringify(this.config));
+    },
 
     // assign property to object
     defineProperties:function(){
@@ -152,12 +159,14 @@ const app={
         // random song
         randomBtnIcon.onclick=function(){
             _this.isRandom=!_this.isRandom
+            _this.setConfig('isRandom',_this.isRandom)
             randomBtn.classList.toggle('active',_this.isRandom)
         }
 
         // when repeat song
         repeatBtnIcon.onclick=function(){
             _this.isRepeat=!_this.isRepeat
+            _this.setConfig('isRepeat',_this.isRepeat)
             repeatBtn.classList.toggle('active',_this.isRepeat)
         }
 
@@ -230,12 +239,12 @@ const app={
 
         // when song end
         audio.onended=()=>{
-            if(this.isRandom){
-                _this.randomSong();
-                audio.play();
-            }else if(this.isRepeat){
+            if(this.isRepeat){
                 audio.play();
                 _this.isPlaying=true;
+            }else if(this.isRandom){
+                _this.randomSong();
+                audio.play();
             }
             else nextBtn.click();
         }
@@ -252,6 +261,16 @@ const app={
                 }
             }
         }
+    },
+
+    // keep repeat and random when u refresh page using localStorage
+    loadConfig: function(){
+        this.isRandom=this.config.isRandom;
+        this.isRepeat=this.config.isRepeat;
+
+        // Hiển thị trạng thái ban đầu của 2 nút qua local storage
+        randomBtn.classList.toggle('active',this.isRandom)
+        repeatBtn.classList.toggle('active',this.isRepeat)
     },
 
     // when click next/back song
@@ -318,6 +337,9 @@ const app={
         this.activeSong();
     },
     start:function(){
+
+        this.loadConfig();
+
         this.defineProperties();
 
         this.handleEvent();
